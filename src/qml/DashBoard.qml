@@ -221,6 +221,7 @@ Drawer {
             font: Theme.defaultFont
             iconSource: Theme.getThemeVectorIcon("ic_project_folder_black_24dp")
             iconColor: Theme.mainOverlayColor
+            visible: false
             round: true
             onClicked: {
               showProjectFolder();

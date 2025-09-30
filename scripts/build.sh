@@ -25,8 +25,8 @@ fi
 
 DOCKER_BUILDKIT=1 docker build ${SRC_DIR}/.docker/android_dev -t qfield_and_dev
 
-docker run -it --rm qfield_and_dev env
-docker run -it --rm \
+docker run -it qfield_and_dev env
+docker run -it \
 	-v "$SRC_DIR":/usr/src/qfield:Z \
 	$(if [ -n "$CACHE_DIR" ]; then echo "-v $CACHE_DIR:/io/.cache:Z"; fi) \
 	-e triplet=${triplet} \

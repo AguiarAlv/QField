@@ -269,44 +269,12 @@ void AndroidPlatformUtilities::updateProjectFromArchive( const QString &projectP
 
 void AndroidPlatformUtilities::sendDatasetTo( const QString &path ) const
 {
-  if ( mActivity.isValid() )
-  {
-    runOnAndroidMainThread( [path] {
-      auto activity = qtAndroidContext();
-      if ( activity.isValid() )
-      {
-        QStringList paths = QStringList() << path;
-        const QSet<QString> files = QgsFileUtils::sidecarFilesForPath( path );
-        for ( const QString &file : files )
-        {
-          paths << file;
-        }
-        QJniObject pathsJni = QJniObject::fromString( paths.join( "--;--" ) );
-        activity.callMethod<void>( "sendDatasetTo", "(Ljava/lang/String;)V", pathsJni.object<jstring>() );
-      }
-    } );
-  }
+  Q_UNUSED(path);
 }
 
 void AndroidPlatformUtilities::exportDatasetTo( const QString &path ) const
-{
-  if ( mActivity.isValid() )
-  {
-    runOnAndroidMainThread( [path] {
-      auto activity = qtAndroidContext();
-      if ( activity.isValid() )
-      {
-        QStringList paths = QStringList() << path;
-        const QSet<QString> files = QgsFileUtils::sidecarFilesForPath( path );
-        for ( const QString &file : files )
-        {
-          paths << file;
-        }
-        QJniObject pathsJni = QJniObject::fromString( paths.join( "--;--" ) );
-        activity.callMethod<void>( "exportToFolder", "(Ljava/lang/String;)V", pathsJni.object<jstring>() );
-      }
-    } );
-  }
+{ 
+  Q_UNUSED(path);
 }
 
 void AndroidPlatformUtilities::removeDataset( const QString &path ) const
@@ -339,17 +307,7 @@ void AndroidPlatformUtilities::removeDataset( const QString &path ) const
 
 void AndroidPlatformUtilities::exportFolderTo( const QString &path ) const
 {
-  if ( mActivity.isValid() )
-  {
-    runOnAndroidMainThread( [path] {
-      auto activity = qtAndroidContext();
-      if ( activity.isValid() )
-      {
-        QJniObject pathJni = QJniObject::fromString( path );
-        activity.callMethod<void>( "exportToFolder", "(Ljava/lang/String;)V", pathJni.object<jstring>() );
-      }
-    } );
-  }
+   Q_UNUSED(path);
 }
 
 void AndroidPlatformUtilities::sendCompressedFolderTo( const QString &path ) const
