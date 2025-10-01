@@ -3,6 +3,6 @@
     <item
     android:width="192dp"
     android:height="192dp"
-    android:drawable="@drawable/splash_image"
+    android:drawable="@drawable/qfield_logo_beta_vector"
     android:gravity="center" />
 </layer-list>

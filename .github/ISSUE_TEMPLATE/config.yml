@@ -6,10 +6,10 @@ contact_links:
     about: >
       Add your suggestion how to improve QField, QFieldSync, QFieldCloud or QFieldCloud SDK at https://ideas.qfield.cloud/ .
 
-  - name: Request support for your app.qfield.cloud account
+  - name: Request support for your cloud.topodatumweb.com.br account
     url: https://support.qfield.cloud
     about: >
-      Open a ticket at our support platform for your QFieldCloud account at app.qfield.cloud users at https://support.qfield.cloud/                                                                                     .
+      Open a ticket at our support platform for your QFieldCloud account at cloud.topodatumweb.com.br users at https://support.qfield.cloud/                                                                                     .
 
   - name: Report bug for QFieldSync
     url: https://github.com/opengisch/QFieldSync/issues
